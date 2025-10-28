@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>دليل الروابط للقادة</title>
+<style>
+  :root{
+    --bg-1: #f5fcf7;
+    --bg-2: #e4f9ec;
+    --card: #ffffff;
+    --card-soft: #f0fdf4;
+    --muted: #7bbf97;
+    --accent: #22c55e;      /* أخضر أساسي عصري */
+    --accent-2: #6ee7b7;    /* أخضر نعناع فاتح */
+    --accent-3: #a7f3d0;    /* أخضر ليموني فاتح */
+    --accent-4: #b5f7cc;    /* أخضر باهت */
+    --accent-yellow: #fef9c3;
+    --glass: rgba(34,197,94,0.04);
+    --radius:14px;
+    --btn-size:140px;
+    --gap:18px;
+    --text-main: #254334;
+    --text-soft: #5e826d;
+    --border: #b8eec3;
+    --shadow: 0 2px 16px 0 rgba(34,197,94,0.09);
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: Inter, "Tajawal", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(120deg, var(--bg-1) 60%, var(--bg-2) 200%);
+    color: var(--text-main);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    padding:30px;
+    display:flex;
+    justify-content:center;
+    min-height:100vh;
+  }
+  .wrap{width:100%;max-width:1100px;}
+
+  header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;gap:12px}
+  header .title{display:flex;flex-direction:column}
+  h1{margin:0;font-size:22px;letter-spacing:0.2px;color:var(--accent);}
+  .user-title{
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--accent);
+    margin-bottom: 2px;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px #b7f7cc44;
+  }
+  p.lead{margin:4px 0 0;color:var(--text-soft);font-size:14px}
+
+  .controls{display:flex;gap:10px;align-items:center}
+  .btn{
+    background:var(--glass);
+    border:1px solid var(--border);
+    padding:8px 12px;
+    border-radius:12px;
+    cursor:pointer;
+    color:var(--accent);
+    font-weight:600;
+    transition:.15s;
+    box-shadow:var(--shadow);
+  }
+  .btn.strong{
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    color:#fff;
+    border: none;
+    box-shadow:0 8px 24px rgba(34,197,94,0.13)
+  }
+  .btn:hover,.a-btn:hover{filter:brightness(1.06);background:var(--accent-4);color:var(--accent);}
+
+  .card{
+    background:linear-gradient(180deg, var(--card) 70%, var(--card-soft) 100%);
+    border-radius:20px;
+    padding:18px;
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+  }
+  .footer-note{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-top:12px}
+
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--btn-size), 1fr));
+    gap:var(--gap);
+    justify-items:end;
+    align-items:start;
+    padding:6px;
+  }
+
+  .tile{
+    width:100%;
+    max-width:320px;
+    background:linear-gradient(180deg, #e9fbe9 60%, #f7fffa 100%);
+    border-radius:14px;
+    padding:14px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+    border:1px solid var(--border);
+    transition:transform .18s, box-shadow .18s;
+    box-shadow:0 2px 16px 0 rgba(34,197,94,0.06);
+  }
+  .tile:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 14px 36px rgba(34,197,94,0.15)}
+
+  .face{
+    width:var(--btn-size);
+    height:var(--btn-size);
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:40px;
+    background:linear-gradient(135deg, #d1fadf 60%, #f0fdf4 100%);
+    border:1px solid var(--border);
+    overflow:hidden;
+    position:relative;
+    transition:box-shadow .18s, transform .18s;
+  }
+  .face img{width:100%;height:100%;object-fit:cover}
+  .face:hover{transform:scale(1.04);box-shadow:0 10px 30px rgba(34,197,94,0.11)}
+
+  .label{width:100%;text-align:right;}
+  .label h3{
+    margin:0;
+    font-size:15px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    text-overflow: unset;
+    word-break: break-all;
+    line-height:1.6;
+    color:var(--text-main);
+  }
+  .label p{
+    margin:4px 0 0;
+    color:var(--text-soft);
+    font-size:13px;
+    overflow:hidden;
+    text-overflow:ellipsis
+  }
+
+  .actions{
+    width:100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 4px;
+  }
+  .a-btn{
+    background:linear-gradient(180deg, #e5fbe7 60%, #f7fffa 100%);
+    border:1px solid var(--border);
+    padding:8px 10px;
+    border-radius:10px;
+    color:var(--accent);
+    font-weight:700;
+    cursor:pointer;
+    transition: box-shadow .14s, color .12s, background .12s;
+    width:100%;
+    font-size:14px;
+    box-shadow:0 1px 4px rgba(34,197,94,0.06);
+  }
+  .a-btn:hover{
+    color:#fff;
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    box-shadow:0 4px 14px rgba(34,197,94,0.13)
+  }
+
+  .main-cta{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    border-radius:12px;
+  }
+  .cta-btn{
+    width:100%;
+    padding:18px;
+    border-radius:12px;
+    border:none;
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    color:#fff;
+    font-weight:800;
+    font-size:16px;
+    cursor:pointer;
+    box-shadow:0 8px 30px rgba(34,197,94,0.10);
+    transition:transform .16s, box-shadow .16s;
+  }
+  .cta-btn:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 18px 48px rgba(34,197,94,0.15)}
+
+  .modal-back{
+    position:fixed;inset:0;background:rgba(110,231,183,0.08);display:none;align-items:center;justify-content:center;z-index:60;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    padding:20px;
+  }
+  .modal{
+    width:100%;max-width:720px;background:linear-gradient(180deg, #f0fdf4 75%, #e4f9ec 100%);
+    border-radius:14px;padding:18px;border:1px solid var(--border);color:inherit;
+    box-shadow:0 18px 60px rgba(110,231,183,0.13);
+    animation:modalIn .22s ease;
+  }
+  @keyframes modalIn{from{opacity:0;transform:translateY(-8px)} to{opacity:1;transform:none}}
+
+  .form-row{display:flex;gap:10px;margin-bottom:10px;align-items:center}
+  label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+  input[type="text"], select{
+    width:100%;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    background:#f0fdf4;
+    color:var(--text-main);
+  }
+
+  .icon-picker{
+    width:420px;max-width:94vw;
+    background:linear-gradient(180deg, #f0fdf4 70%, #e4f9ec 100%);
+    border-radius:12px;padding:12px;
+    border:1px solid var(--border);
+    max-height:78vh;overflow:auto;
+    box-shadow:0 2px 14px 0 rgba(110,231,183,0.13)
+  }
+  .icon-grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(56px,1fr));gap:10px;margin-top:8px;
+  }
+  .icon-tile{
+    font-size:26px;
+    padding:10px;
+    border-radius:8px;
+    text-align:center;
+    cursor:pointer;
+    transition:background .12s,transform .12s, color .12s;
+    background:#f0fdf4;
+    color:var(--accent);
+    border:1px solid var(--border);
+  }
+  .icon-tile:hover{
+    background:linear-gradient(90deg,var(--accent-2),var(--accent));
+    color:#fff;
+    transform:scale(1.08)
+  }
+
+  /* Responsive */
+  @media (max-width:850px){ body{padding:7px;} }
+  @media (max-width:720px){
+    .grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));justify-items:center}
+    .actions{gap:6px}
+    .cta-btn{padding:14px}
+    .wrap{padding:0 2px;}
+    .modal{padding:8px;}
+    .card{padding:7px;}
+    .user-title{font-size: 18px;}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="title">
+        <h1>دليل الروابط للقادة</h1>
+        <div class="user-title" id="userTitle" style="display:none"></div>
+        <p class="lead">دليلك الذكي لأهم الروابط — صمم قائمتك وشاركها بسهولة</p>
+      </div>
+      <div class="controls" role="toolbar">
+        <button class="btn" id="changeUserBtn">👤 تغيير الاسم</button>
+        <button class="btn" id="importBtn">📂 استيراد JSON</button>
+        <button class="btn" id="exportBtn">💾 تصدير JSON</button>
+        <button class="btn strong" id="addBtn">+ إضافة زر</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <div id="grid" class="grid" aria-live="polite"></div>
+      <div class="footer-note">
+        <div>اسحب لإعادة الترتيب · اضغط على الزر لفتحه</div>
+        <div class="muted">يُحفظ محليًا لكل مستخدم على جهازك</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- اسم المستخدم (modal) -->
+  <div class="modal-back" id="userModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="userTitleModal">
+      <h2 id="userTitleModal">أدخل اسمك للمتابعة</h2>
+      <div style="margin-top:10px">
+        <div class="form-row" style="flex-direction:column">
+          <label for="userInput">اسمك (سيظهر كعنوان فرعي ويحفظ بياناتك)</label>
+          <input id="userInput" type="text" placeholder="مثال: القائد محمد" autocomplete="off">
+        </div>
+        <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">
+          <button class="btn" id="cancelUserModal" style="display:none">إلغاء</button>
+          <button class="btn strong" id="saveUserModal">حفظ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- باقي المودال والكود كما هو -->
+  <div class="modal-back" id="formModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="formTitle">
+      <h2 id="formTitle">أضف / عدّل زر</h2>
+      <div style="margin-top:10px">
+        <div class="form-row" style="flex-direction:column">
+          <label for="labelInput">الاسم (يظهر)</label>
+          <input id="labelInput" type="text" placeholder="مثال: YouTube">
+        </div>
+        <div class="form-row" style="flex-direction:column">
+          <label for="urlInput">الرابط (URL)</label>
+          <input id="urlInput" type="text" placeholder="https://...">
+        </div>
+        <div class="form-row">
+          <div style="flex:1">
+            <label for="faceType">نوع الوجه</label>
+            <select id="faceType">
+              <option value="icon">أيقونة</option>
+              <option value="image">صورة (رابط)</option>
+            </select>
+          </div>
+          <div style="width:150px">
+            <label>&nbsp;</label>
+            <button class="btn" id="openIconPickerBtn" style="width:100%;">اختيار رمز</button>
+          </div>
+        </div>
+        <div class="form-row" style="flex-direction:column">
+          <label id="imgLabel" style="display:none">رابط الصورة</label>
+          <input id="iconInput" type="text" placeholder="🔗 أو رابط صورة">
+        </div>
+        <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">
+          <button class="btn" id="cancelModal">إلغاء</button>
+          <button class="btn strong" id="saveModal">حفظ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-back" id="iconPickerBack" style="z-index:80">
+    <div class="icon-picker" role="dialog" aria-modal="true" aria-labelledby="iconTitle">
+      <h3 id="iconTitle">اختيار أيقونة</h3>
+      <div class="icon-grid" id="iconGrid"></div>
+      <div style="display:flex;justify-content:flex-end;margin-top:10px">
+        <button class="btn" id="closeIconPicker">إغلاق</button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-back" id="shareModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="shareTitle">
+      <h3 id="shareTitle">مشاركة الرابط</h3>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+        <button class="btn" id="copyLinkBtn">📋 نسخ الرابط</button>
+        <button class="btn" id="whatsBtn">💬 مشاركة عبر واتساب</button>
+        <button class="btn" id="closeShare">إغلاق</button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-back" id="whatsModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="whatsTitle">
+      <h3 id="whatsTitle">مشاركة عبر واتساب</h3>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
+        <button class="btn" id="waNoNumber">مشاركة بدون رقم (يفتح واتساب)</button>
+        <div style="display:flex;gap:8px;align-items:center">
+          <input id="waNumber" type="text" placeholder="اكتب رقم المستلم بدون (+ أو 0) - مثال: 201234567890" style="flex:1" />
+          <button class="btn strong" id="waWithNumber">إرسال</button>
+        </div>
+        <div style="display:flex;justify-content:flex-end"><button class="btn" id="closeWhats">إغلاق</button></div>
+      </div>
+    </div>
+  </div>
+  <input id="fileInput" type="file" accept="application/json" style="display:none" />
+<script>
+/* ----------- اسم المستخدم ----------- */
+let currentUser = localStorage.getItem("LINK_GUIDE_USERNAME") || null;
+const userTitle = document.getElementById('userTitle');
+const userModal = document.getElementById('userModal');
+const userInput = document.getElementById('userInput');
+const saveUserModalBtn = document.getElementById('saveUserModal');
+const cancelUserModalBtn = document.getElementById('cancelUserModal');
+const changeUserBtn = document.getElementById('changeUserBtn');
+
+function showUserModal(firstTime){
+  userModal.style.display = 'flex';
+  if(firstTime) cancelUserModalBtn.style.display = 'none';
+  else cancelUserModalBtn.style.display = 'inline-block';
+  userInput.value = currentUser || '';
+  setTimeout(()=>userInput.focus(), 100);
+}
+function saveUserName(){
+  const name = userInput.value.trim();
+  if(!name){ alert("يرجى كتابة اسمك."); userInput.focus(); return; }
+  currentUser = name;
+  localStorage.setItem("LINK_GUIDE_USERNAME", name);
+  userTitle.textContent = "👤 المستخدم: " + name;
+  userTitle.style.display = 'block';
+  userModal.style.display = 'none';
+  loadUserState();
+}
+function checkUser(){
+  if(!currentUser){
+    showUserModal(true);
+  }else{
+    userTitle.textContent = "👤 المستخدم: " + currentUser;
+    userTitle.style.display = 'block';
+  }
+}
+saveUserModalBtn.onclick = saveUserName;
+cancelUserModalBtn.onclick = ()=>{ userModal.style.display='none'; };
+changeUserBtn.onclick = ()=> showUserModal(false);
+userInput.addEventListener('keydown',e=>{ if(e.key==='Enter') saveUserName(); });
+
+checkUser();
+
+/* ------------- حالة الموقع (لكل مستخدم) ------------- */
+const grid = document.getElementById('grid');
+function STORAGE_KEY(){ return 'LINK_GUIDE_USERDATA_' + (currentUser||'GENERAL'); }
+let state = loadState();
+let editingKey = null;
+
+function loadUserState(){
+  state = loadState();
+  render();
+}
+
+function saveState(){ localStorage.setItem(STORAGE_KEY(), JSON.stringify(state)); }
+function loadState(){ try{ return JSON.parse(localStorage.getItem(STORAGE_KEY())) || getDefaultLinks(); }catch(e){ return getDefaultLinks(); } }
+function getDefaultLinks(){
+  return [
+    { key:'youtube', label:'YouTube', url:'https://youtube.com', faceType:'icon', icon:'▶️' },
+    { key:'whatsapp', label:'WhatsApp', url:'https://wa.me', faceType:'icon', icon:'💬' },
+    { key:'facebook', label:'Facebook', url:'https://facebook.com', faceType:'icon', icon:'📘' }
+  ];
+}
+
+function render(){
+  grid.innerHTML = '';
+  state.forEach(item=>{
+    const tile = document.createElement('div');
+    tile.className = 'tile';
+    tile.dataset.key = item.key;
+    tile.draggable = true;
+
+    // face (icon or image)
+    const face = document.createElement('div');
+    face.className = 'face';
+    if(item.faceType === 'image' && item.icon){
+      const img = document.createElement('img');
+      img.src = item.icon;
+      img.alt = item.label;
+      face.appendChild(img);
+    } else {
+      if(item.icon && item.icon.trim().startsWith('<svg')){
+        face.innerHTML = item.icon;
+      } else {
+        const span = document.createElement('div');
+        span.textContent = item.icon || '🔘';
+        span.style.fontSize = '36px';
+        face.appendChild(span);
+      }
+    }
+
+    // label
+    const labelWrap = document.createElement('div');
+    labelWrap.className = 'label';
+    const h3 = document.createElement('h3'); h3.textContent = item.label || 'No name';
+    const p = document.createElement('p'); p.textContent = item.url || '';
+    labelWrap.appendChild(h3); labelWrap.appendChild(p);
+
+    // actions under face
+    const actions = document.createElement('div');
+    actions.className = 'actions';
+
+    const editBtn = document.createElement('button'); editBtn.className='a-btn'; editBtn.textContent='✏️ تعديل';
+    editBtn.addEventListener('click', (e)=>{ e.stopPropagation(); openFormModal(item.key); });
+
+    const delBtn = document.createElement('button'); delBtn.className='a-btn'; delBtn.textContent='🗑️ حذف';
+    delBtn.addEventListener('click', (e)=>{ e.stopPropagation(); if(confirm('حذف هذا الزر؟')){ state = state.filter(s=>s.key!==item.key); saveState(); render(); } });
+
+    const shareBtn = document.createElement('button'); shareBtn.className='a-btn'; shareBtn.textContent='مشاركة';
+    shareBtn.addEventListener('click', (e)=>{ e.stopPropagation(); currentShareLink = item.url; openModal('shareModal'); });
+
+    actions.append(editBtn, delBtn, shareBtn);
+
+    // click whole tile opens link (except if clicked button)
+    tile.addEventListener('click',(e)=>{ if(e.target.tagName.toLowerCase()==='button') return; window.open(item.url,'_blank'); });
+
+    // Drag & drop handlers (reorder)
+    tile.addEventListener('dragstart',(e)=>{ e.dataTransfer.setData('text/plain', item.key); tile.style.opacity='0.5'; });
+    tile.addEventListener('dragend',()=>{ tile.style.opacity='1'; });
+    tile.addEventListener('dragover',(e)=>{ e.preventDefault(); tile.style.outline='3px dashed var(--accent-2)'; });
+    tile.addEventListener('dragleave',()=>{ tile.style.outline='none'; });
+    tile.addEventListener('drop',(e)=>{ e.preventDefault(); tile.style.outline='none'; const fromKey = e.dataTransfer.getData('text/plain'); if(!fromKey) return; if(fromKey===item.key) return; const fromIdx = state.findIndex(s=>s.key===fromKey); const toIdx = state.findIndex(s=>s.key===item.key); const [m] = state.splice(fromIdx,1); state.splice(toIdx,0,m); saveState(); render(); });
+
+    tile.appendChild(face);
+    tile.appendChild(labelWrap);
+    tile.appendChild(actions);
+    grid.appendChild(tile);
+  });
+}
+render();
+
+const formModal = document.getElementById('formModal');
+const labelInput = document.getElementById('labelInput');
+const urlInput = document.getElementById('urlInput');
+const faceType = document.getElementById('faceType');
+const iconInput = document.getElementById('iconInput');
+const imgLabel = document.getElementById('imgLabel');
+const openIconPickerBtn = document.getElementById('openIconPickerBtn');
+const saveModalBtn = document.getElementById('saveModal');
+const cancelModalBtn = document.getElementById('cancelModal');
+
+document.getElementById('addBtn').addEventListener('click', ()=> openFormModal(null));
+cancelModalBtn.addEventListener('click', ()=> closeModal('formModal'));
+
+faceType.addEventListener('change', ()=>{
+  if(faceType.value==='icon'){ imgLabel.style.display='none'; iconInput.style.display='none'; openIconPickerBtn.style.display='block'; }
+  else { imgLabel.style.display='block'; iconInput.style.display='block'; openIconPickerBtn.style.display='none'; }
+});
+
+openIconPickerBtn.addEventListener('click', ()=> openModal('iconPickerBack'));
+
+function openFormModal(key=null){
+  editingKey = null;
+  if(key){
+    const item = state.find(s=>s.key===key);
+    if(!item) return;
+    editingKey = key;
+    labelInput.value = item.label;
+    urlInput.value = item.url;
+    faceType.value = item.faceType || 'icon';
+    iconInput.value = item.icon || '';
+  } else {
+    labelInput.value = '';
+    urlInput.value = '';
+    faceType.value = 'icon';
+    iconInput.value = '';
+    editingKey = null;
+  }
+  faceType.dispatchEvent(new Event('change'));
+  openModal('formModal');
+}
+
+saveModalBtn.addEventListener('click', ()=>{
+  const label = labelInput.value.trim() || 'No name';
+  const url = urlInput.value.trim() || '#';
+  const ft = faceType.value;
+  const iconVal = (ft==='icon') ? (iconInput.value || '🔘') : iconInput.value || '';
+
+  if(editingKey){
+    const idx = state.findIndex(s=>s.key===editingKey);
+    if(idx>-1) state[idx] = { ...state[idx], label, url, faceType:ft, icon:iconVal };
+  } else {
+    const k = 'k'+Date.now();
+    state.push({ key:k, label, url, faceType:ft, icon:iconVal });
+  }
+  saveState();
+  render();
+  closeModal('formModal');
+});
+
+const iconPickerBack = document.getElementById('iconPickerBack');
+const iconGrid = document.getElementById('iconGrid');
+const closeIconPicker = document.getElementById('closeIconPicker');
+
+const ICONS = [
+  '🔗','💬','📞','✉️','📷','🎥','🎵','🛒','💼','⚙️','📚','🧠','🎮','💡','🗓️','💳','💻','📱','🏠','🌐','⭐','✅','🔔','🔎','🚀',
+  '❤️','📈','📊','☁️','🎁','🏆','🎯','🧪','🌍','📍','🖼️','🎤','📻','⚛️',
+  '📸','🐦','📘','🎬','🟢','🔵','💼','👻','🎵','🌍',
+  '👥','👨‍👩‍👧‍👦','👨‍👨‍👧‍👦','🤝','📣','👤','🧑','🧑‍🤝‍🧑','👨‍👩‍👧‍👧'
+];
+
+ICONS.forEach(ic=>{
+  const el = document.createElement('div');
+  el.className = 'icon-tile';
+  el.textContent = ic;
+  el.addEventListener('click', ()=>{
+    iconInput.value = ic;
+    closeModal('iconPickerBack');
+  });
+  iconGrid.appendChild(el);
+});
+closeIconPicker.addEventListener('click', ()=> closeModal('iconPickerBack'));
+
+let currentShareLink = '';
+const copyLinkBtn = document.getElementById('copyLinkBtn');
+const whatsBtn = document.getElementById('whatsBtn');
+const closeShare = document.getElementById('closeShare');
+
+const waNoNumber = document.getElementById('waNoNumber');
+const waWithNumber = document.getElementById('waWithNumber');
+const waNumber = document.getElementById('waNumber');
+const closeWhats = document.getElementById('closeWhats');
+
+copyLinkBtn.addEventListener('click', ()=>{
+  if(!currentShareLink) { alert('لا يوجد رابط للمشاركة'); return; }
+  navigator.clipboard.writeText(currentShareLink).then(()=> alert('تم نسخ الرابط إلى الحافظة') ).catch(()=> alert('فشل في النسخ'));
+});
+whatsBtn.addEventListener('click', ()=>{
+  closeModal('shareModal'); openModal('whatsModal');
+});
+closeShare.addEventListener('click', ()=> closeModal('shareModal'));
+waNoNumber.addEventListener('click', ()=>{
+  if(!currentShareLink){ alert('لا يوجد رابط للمشاركة'); return; }
+  const url = `https://wa.me/?text=${encodeURIComponent(currentShareLink)}`;
+  window.open(url,'_blank');
+  closeModal('whatsModal');
+});
+waWithNumber.addEventListener('click', ()=>{
+  const num = waNumber.value.trim();
+  if(!num){ alert('اكتب رقم مستلم صحيح'); return; }
+  if(!currentShareLink){ alert('لا يوجد رابط للمشاركة'); return; }
+  const url = `https://wa.me/${encodeURIComponent(num)}?text=${encodeURIComponent(currentShareLink)}`;
+  window.open(url,'_blank');
+  closeModal('whatsModal');
+});
+closeWhats.addEventListener('click', ()=> closeModal('whatsModal'));
+
+const importBtn = document.getElementById('importBtn');
+const exportBtn = document.getElementById('exportBtn');
+const fileInput = document.getElementById('fileInput');
+
+exportBtn.addEventListener('click', ()=>{
+  const blob = new Blob([JSON.stringify(state,null,2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'menu.json';
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(a.href);
+});
+
+importBtn.addEventListener('click', ()=> fileInput.click());
+fileInput.addEventListener('change', (e)=>{
+  const f = e.target.files[0];
+  if(!f) return;
+  const r = new FileReader();
+  r.onload = ()=> {
+    try{
+      const data = JSON.parse(r.result);
+      if(Array.isArray(data)){
+        state = data.map((it,idx)=> ({ key: it.key || ('k'+(Date.now()+idx)), label: it.label||'No name', url: it.url||'#', faceType: it.faceType||'icon', icon: it.icon||'🔘' }));
+        saveState(); render();
+        alert('تم الاستيراد');
+      } else alert('ملف غير صالح');
+    }catch{
+      alert('خطأ في قراءة الملف');
+    }
+  };
+  r.readAsText(f);
+  fileInput.value='';
+});
+
+function openModal(id){ document.getElementById(id).style.display = 'flex'; }
+function closeModal(id){ document.getElementById(id).style.display = 'none'; }
+window.addEventListener('beforeunload', ()=> saveState() );
+</script>
+</body>
+</html>
