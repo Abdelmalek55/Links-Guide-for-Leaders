@@ -6,24 +6,16 @@
 <title>دليل الروابط للقادة</title>
 <style>
   :root{
-    --bg-1: #f5fcf7;
-    --bg-2: #e4f9ec;
-    --card: #ffffff;
-    --card-soft: #f0fdf4;
-    --muted: #7bbf97;
-    --accent: #22c55e;      /* أخضر أساسي عصري */
-    --accent-2: #6ee7b7;    /* أخضر نعناع فاتح */
-    --accent-3: #a7f3d0;    /* أخضر ليموني فاتح */
-    --accent-4: #b5f7cc;    /* أخضر باهت */
-    --accent-yellow: #fef9c3;
-    --glass: rgba(34,197,94,0.04);
+    --bg-1:#071127;
+    --bg-2:#0b1522;
+    --card:#0e1926;
+    --muted:#9aa4b2;
+    --accent:#3b82f6;
+    --accent-2:#6ee7b7;
+    --glass: rgba(255,255,255,0.03);
     --radius:14px;
     --btn-size:140px;
     --gap:18px;
-    --text-main: #254334;
-    --text-soft: #5e826d;
-    --border: #b8eec3;
-    --shadow: 0 2px 16px 0 rgba(34,197,94,0.09);
   }
 
   *{box-sizing:border-box}
@@ -31,8 +23,10 @@
   body{
     margin:0;
     font-family: Inter, "Tajawal", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    background: linear-gradient(120deg, var(--bg-1) 60%, var(--bg-2) 200%);
-    color: var(--text-main);
+    background: radial-gradient(800px 400px at 10% 10%, rgba(59,130,246,0.06), transparent),
+                radial-gradient(600px 300px at 90% 90%, rgba(99,102,241,0.03), transparent),
+                linear-gradient(180deg,var(--bg-1),var(--bg-2));
+    color:#e6eef6;
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
     padding:30px;
@@ -48,41 +42,20 @@
   .user-title{
     font-size: 22px;
     font-weight: bold;
-    color: var(--accent);
+    color: var(--accent-2);
     margin-bottom: 2px;
     margin-top: 10px;
     letter-spacing: 0.5px;
-    text-shadow: 0 2px 10px #b7f7cc44;
+    text-shadow: 0 2px 10px #3b82f680;
   }
-  p.lead{margin:4px 0 0;color:var(--text-soft);font-size:14px}
+  p.lead{margin:4px 0 0;color:var(--muted);font-size:14px}
 
   .controls{display:flex;gap:10px;align-items:center}
-  .btn{
-    background:var(--glass);
-    border:1px solid var(--border);
-    padding:8px 12px;
-    border-radius:12px;
-    cursor:pointer;
-    color:var(--accent);
-    font-weight:600;
-    transition:.15s;
-    box-shadow:var(--shadow);
-  }
-  .btn.strong{
-    background:linear-gradient(90deg,var(--accent),var(--accent-2));
-    color:#fff;
-    border: none;
-    box-shadow:0 8px 24px rgba(34,197,94,0.13)
-  }
-  .btn:hover,.a-btn:hover{filter:brightness(1.06);background:var(--accent-4);color:var(--accent);}
+  .btn{background:var(--glass);border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:12px;cursor:pointer;color:inherit;font-weight:600;transition:.15s;}
+  .btn.strong{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#04233b;box-shadow:0 8px 24px rgba(59,130,246,0.14)}
+  .btn:hover,.a-btn:hover{filter:brightness(1.08);background:var(--glass);}
 
-  .card{
-    background:linear-gradient(180deg, var(--card) 70%, var(--card-soft) 100%);
-    border-radius:20px;
-    padding:18px;
-    border:1px solid var(--border);
-    box-shadow:var(--shadow);
-  }
+  .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.006));border-radius:20px;padding:18px;border:1px solid rgba(255,255,255,0.03)}
   .footer-note{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-top:12px}
 
   .grid{
@@ -97,18 +70,17 @@
   .tile{
     width:100%;
     max-width:320px;
-    background:linear-gradient(180deg, #e9fbe9 60%, #f7fffa 100%);
+    background:linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.006));
     border-radius:14px;
     padding:14px;
     display:flex;
     flex-direction:column;
     align-items:center;
     gap:12px;
-    border:1px solid var(--border);
-    transition:transform .18s, box-shadow .18s;
-    box-shadow:0 2px 16px 0 rgba(34,197,94,0.06);
+    border:1px solid rgba(255,255,255,0.03);
+    transition:transform .18s ease, box-shadow .18s ease;
   }
-  .tile:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 14px 36px rgba(34,197,94,0.15)}
+  .tile:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(2,6,23,0.6)}
 
   .face{
     width:var(--btn-size);
@@ -118,16 +90,16 @@
     align-items:center;
     justify-content:center;
     font-size:40px;
-    background:linear-gradient(135deg, #d1fadf 60%, #f0fdf4 100%);
-    border:1px solid var(--border);
+    background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.03);
     overflow:hidden;
     position:relative;
     transition:box-shadow .18s, transform .18s;
   }
   .face img{width:100%;height:100%;object-fit:cover}
-  .face:hover{transform:scale(1.04);box-shadow:0 10px 30px rgba(34,197,94,0.11)}
+  .face:hover{transform:scale(1.04);box-shadow:0 10px 30px rgba(59,130,246,0.08)}
 
-  .label{width:100%;text-align:right;}
+  .label{width:100%;text-align:right}
   .label h3{
     margin:0;
     font-size:15px;
@@ -136,15 +108,9 @@
     text-overflow: unset;
     word-break: break-all;
     line-height:1.6;
-    color:var(--text-main);
+    color:#e6eef6;
   }
-  .label p{
-    margin:4px 0 0;
-    color:var(--text-soft);
-    font-size:13px;
-    overflow:hidden;
-    text-overflow:ellipsis
-  }
+  .label p{margin:4px 0 0;color:var(--muted);font-size:13px;overflow:hidden;text-overflow:ellipsis}
 
   .actions{
     width:100%;
@@ -156,23 +122,18 @@
     margin-top: 4px;
   }
   .a-btn{
-    background:linear-gradient(180deg, #e5fbe7 60%, #f7fffa 100%);
-    border:1px solid var(--border);
+    background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+    border:1px solid rgba(255,255,255,0.03);
     padding:8px 10px;
     border-radius:10px;
-    color:var(--accent);
+    color:var(--muted);
     font-weight:700;
     cursor:pointer;
-    transition: box-shadow .14s, color .12s, background .12s;
+    transition: transform .14s, box-shadow .14s;
     width:100%;
     font-size:14px;
-    box-shadow:0 1px 4px rgba(34,197,94,0.06);
   }
-  .a-btn:hover{
-    color:#fff;
-    background:linear-gradient(90deg,var(--accent),var(--accent-2));
-    box-shadow:0 4px 14px rgba(34,197,94,0.13)
-  }
+  .a-btn:hover{transform:translateY(-4px);box-shadow:0 8px 22px rgba(2,6,23,0.45);color:#eaf6ff}
 
   .main-cta{
     width:100%;
@@ -188,77 +149,71 @@
     border-radius:12px;
     border:none;
     background:linear-gradient(90deg,var(--accent),var(--accent-2));
-    color:#fff;
+    color:#04233b;
     font-weight:800;
     font-size:16px;
     cursor:pointer;
-    box-shadow:0 8px 30px rgba(34,197,94,0.10);
-    transition:transform .16s, box-shadow .16s;
+    box-shadow:0 8px 30px rgba(59,130,246,0.16);
+    transition:transform .16s ease, box-shadow .16s ease;
   }
-  .cta-btn:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 18px 48px rgba(34,197,94,0.15)}
+  .cta-btn:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 18px 48px rgba(59,130,246,0.22)}
 
   .modal-back{
-    position:fixed;inset:0;background:rgba(110,231,183,0.08);display:none;align-items:center;justify-content:center;z-index:60;
+    position:fixed;inset:0;background:rgba(2,6,23,0.55);display:none;align-items:center;justify-content:center;z-index:60;
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     padding:20px;
   }
   .modal{
-    width:100%;max-width:720px;background:linear-gradient(180deg, #f0fdf4 75%, #e4f9ec 100%);
-    border-radius:14px;padding:18px;border:1px solid var(--border);color:inherit;
-    box-shadow:0 18px 60px rgba(110,231,183,0.13);
+    width:100%;max-width:720px;background:linear-gradient(180deg, rgba(6,12,22,0.9), rgba(8,16,28,0.9));
+    border-radius:14px;padding:18px;border:1px solid rgba(255,255,255,0.04);color:inherit;
+    box-shadow:0 18px 60px rgba(2,6,23,0.7);
     animation:modalIn .22s ease;
   }
   @keyframes modalIn{from{opacity:0;transform:translateY(-8px)} to{opacity:1;transform:none}}
 
   .form-row{display:flex;gap:10px;margin-bottom:10px;align-items:center}
   label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
-  input[type="text"], select{
-    width:100%;
-    padding:10px;
-    border-radius:10px;
-    border:1px solid var(--border);
-    background:#f0fdf4;
-    color:var(--text-main);
-  }
+  input[type="text"], select{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
 
   .icon-picker{
-    width:420px;max-width:94vw;
-    background:linear-gradient(180deg, #f0fdf4 70%, #e4f9ec 100%);
-    border-radius:12px;padding:12px;
-    border:1px solid var(--border);
+    width:420px;max-width:94vw;background:rgba(7,17,39,0.85);border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,0.06);
     max-height:78vh;overflow:auto;
-    box-shadow:0 2px 14px 0 rgba(110,231,183,0.13)
   }
   .icon-grid{
     display:grid;grid-template-columns:repeat(auto-fill,minmax(56px,1fr));gap:10px;margin-top:8px;
   }
-  .icon-tile{
-    font-size:26px;
-    padding:10px;
-    border-radius:8px;
-    text-align:center;
-    cursor:pointer;
-    transition:background .12s,transform .12s, color .12s;
-    background:#f0fdf4;
-    color:var(--accent);
-    border:1px solid var(--border);
-  }
-  .icon-tile:hover{
-    background:linear-gradient(90deg,var(--accent-2),var(--accent));
-    color:#fff;
-    transform:scale(1.08)
-  }
+  .icon-tile{font-size:26px;padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:background .12s,transform .12s}
+  .icon-tile:hover{background:rgba(255,255,255,0.04);transform:scale(1.08)}
 
-  /* Responsive */
-  @media (max-width:850px){ body{padding:7px;} }
+  .login-mode-btns{
+    display:flex;
+    gap:12px;
+    margin-bottom:15px;
+    justify-content: center;
+  }
+  .login-mode-btn{
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    color:#04233b;
+    font-weight:700;
+    border:none;
+    border-radius:10px;
+    padding:8px 22px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.15s;
+    box-shadow:0 2px 18px rgba(59,130,246,0.13)
+  }
+  .login-mode-btn.selected{
+    background:#fff;
+    color:var(--accent);
+    border:2px solid var(--accent-2);
+    box-shadow:0 4px 22px rgba(59,130,246,0.18)
+  }
   @media (max-width:720px){
     .grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));justify-items:center}
     .actions{gap:6px}
     .cta-btn{padding:14px}
-    .wrap{padding:0 2px;}
-    .modal{padding:8px;}
-    .card{padding:7px;}
     .user-title{font-size: 18px;}
   }
 </style>
@@ -272,7 +227,7 @@
         <p class="lead">دليلك الذكي لأهم الروابط — صمم قائمتك وشاركها بسهولة</p>
       </div>
       <div class="controls" role="toolbar">
-        <button class="btn" id="changeUserBtn">👤 تغيير الاسم</button>
+        <button class="btn" id="changeUserBtn">👤 تغيير الحساب</button>
         <button class="btn" id="importBtn">📂 استيراد JSON</button>
         <button class="btn" id="exportBtn">💾 تصدير JSON</button>
         <button class="btn strong" id="addBtn">+ إضافة زر</button>
@@ -283,29 +238,37 @@
       <div id="grid" class="grid" aria-live="polite"></div>
       <div class="footer-note">
         <div>اسحب لإعادة الترتيب · اضغط على الزر لفتحه</div>
-        <div class="muted">يُحفظ محليًا لكل مستخدم على جهازك</div>
+        <div class="muted">يُحفظ محليًا لكل مستخدم على جهازك (الاسم + رقم الهاتف)</div>
       </div>
     </section>
   </div>
 
-  <!-- اسم المستخدم (modal) -->
+  <!-- نافذة تسجيل الدخول/إنشاء حساب -->
   <div class="modal-back" id="userModal">
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="userTitleModal">
-      <h2 id="userTitleModal">أدخل اسمك للمتابعة</h2>
-      <div style="margin-top:10px">
+      <h2 id="userTitleModal">اختر وضع الدخول</h2>
+      <div class="login-mode-btns" id="loginModeBtns">
+        <button class="login-mode-btn selected" id="loginBtn">تسجيل الدخول</button>
+        <button class="login-mode-btn" id="createBtn">إنشاء حساب جديد</button>
+      </div>
+      <div id="userFormWrap">
         <div class="form-row" style="flex-direction:column">
-          <label for="userInput">اسمك (سيظهر كعنوان فرعي ويحفظ بياناتك)</label>
+          <label for="userInput">اسمك</label>
           <input id="userInput" type="text" placeholder="مثال: القائد محمد" autocomplete="off">
+        </div>
+        <div class="form-row" style="flex-direction:column">
+          <label for="phoneInput">رقم الهاتف</label>
+          <input id="phoneInput" type="text" placeholder="مثال: 201234567890" autocomplete="off" inputmode="tel">
         </div>
         <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">
           <button class="btn" id="cancelUserModal" style="display:none">إلغاء</button>
-          <button class="btn strong" id="saveUserModal">حفظ</button>
+          <button class="btn strong" id="saveUserModal">متابعة</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- باقي المودال والكود كما هو -->
+  <!-- باقي المودالات كما هي ... -->
   <div class="modal-back" id="formModal">
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="formTitle">
       <h2 id="formTitle">أضف / عدّل زر</h2>
@@ -376,37 +339,132 @@
   </div>
   <input id="fileInput" type="file" accept="application/json" style="display:none" />
 <script>
-/* ----------- اسم المستخدم ----------- */
-let currentUser = localStorage.getItem("LINK_GUIDE_USERNAME") || null;
+/* ----------- اسم المستخدم + رقم الهاتف وواجهة تسجيل/دخول ----------- */
+let currentUser = null;
+let currentPhone = null;
 const userTitle = document.getElementById('userTitle');
 const userModal = document.getElementById('userModal');
 const userInput = document.getElementById('userInput');
+const phoneInput = document.getElementById('phoneInput');
 const saveUserModalBtn = document.getElementById('saveUserModal');
 const cancelUserModalBtn = document.getElementById('cancelUserModal');
 const changeUserBtn = document.getElementById('changeUserBtn');
+const loginBtn = document.getElementById('loginBtn');
+const createBtn = document.getElementById('createBtn');
+const loginModeBtns = document.getElementById('loginModeBtns');
+const userFormWrap = document.getElementById('userFormWrap');
+
+let loginMode = "login"; // "login" or "create"
+
+function getUserStorageKey(name, phone){
+  return 'LINK_GUIDE_USERDATA_V2_' + btoa(encodeURIComponent(name.trim()+"::"+phone.trim()));
+}
+function getUsersList(){
+  try {
+    return JSON.parse(localStorage.getItem("LINK_GUIDE_USERS_LIST_V2") || "[]");
+  } catch { return []; }
+}
+function saveUsersList(usersArr){
+  localStorage.setItem("LINK_GUIDE_USERS_LIST_V2", JSON.stringify(usersArr));
+}
+function saveUserData(name, phone){
+  localStorage.setItem("LINK_GUIDE_USER_V2", JSON.stringify({ name, phone }));
+}
+
+function getSavedUser() {
+  try {
+    const userRaw = localStorage.getItem("LINK_GUIDE_USER_V2");
+    if (!userRaw) return null;
+    const obj = JSON.parse(userRaw);
+    if (obj && obj.name && obj.phone) return obj;
+    return null;
+  } catch { return null; }
+}
 
 function showUserModal(firstTime){
   userModal.style.display = 'flex';
   if(firstTime) cancelUserModalBtn.style.display = 'none';
   else cancelUserModalBtn.style.display = 'inline-block';
   userInput.value = currentUser || '';
+  phoneInput.value = currentPhone || '';
   setTimeout(()=>userInput.focus(), 100);
+  // reset login mode
+  setLoginMode("login");
 }
+function setLoginMode(mode){
+  loginMode = mode;
+  if(mode === "login"){
+    loginBtn.classList.add("selected");
+    createBtn.classList.remove("selected");
+    userInput.value = "";
+    phoneInput.value = "";
+    userInput.placeholder = "مثال: القائد محمد";
+    phoneInput.placeholder = "مثال: 201234567890";
+  }else{
+    createBtn.classList.add("selected");
+    loginBtn.classList.remove("selected");
+    userInput.value = "";
+    phoneInput.value = "";
+    userInput.placeholder = "اختر اسم جديد";
+    phoneInput.placeholder = "رقم هاتف جديد (مثال: 201234567890)";
+  }
+}
+loginBtn.onclick = ()=>setLoginMode("login");
+createBtn.onclick = ()=>setLoginMode("create");
+
 function saveUserName(){
   const name = userInput.value.trim();
+  const phone = phoneInput.value.trim();
   if(!name){ alert("يرجى كتابة اسمك."); userInput.focus(); return; }
-  currentUser = name;
-  localStorage.setItem("LINK_GUIDE_USERNAME", name);
-  userTitle.textContent = "👤 المستخدم: " + name;
-  userTitle.style.display = 'block';
-  userModal.style.display = 'none';
-  loadUserState();
+  if(!phone || !/^\d{7,}$/.test(phone)){ alert("يرجى كتابة رقم هاتف صحيح."); phoneInput.focus(); return; }
+  // سجل المستخدمين في مصفوفة منفصلة
+  let usersArr = getUsersList();
+  const storageKey = getUserStorageKey(name, phone);
+
+  if(loginMode==="login"){
+    // البحث عن المستخدم
+    if(!usersArr.find(u=>u.name===name && u.phone===phone)){
+      alert("لا يوجد حساب بهذا الاسم ورقم الهاتف. يمكنك إنشاء حساب جديد.");
+      return;
+    }
+    const userData = localStorage.getItem(storageKey);
+    if(!userData){
+      alert("لا توجد بيانات محفوظة لهذا الحساب.");
+      return;
+    }
+    currentUser = name;
+    currentPhone = phone;
+    saveUserData(currentUser, currentPhone);
+    userTitle.textContent = "👤 المستخدم: " + currentUser + " | 📱 " + currentPhone;
+    userTitle.style.display = 'block';
+    userModal.style.display = 'none';
+    loadUserState();
+  }else{ // إنشاء حساب جديد
+    if(usersArr.find(u=>u.name===name && u.phone===phone)){
+      alert("هذا الحساب موجود بالفعل. يمكنك تسجيل الدخول.");
+      return;
+    }
+    usersArr.push({ name, phone });
+    saveUsersList(usersArr);
+    // حفظ بيانات فارغة
+    localStorage.setItem(storageKey, JSON.stringify(getDefaultLinks()));
+    currentUser = name;
+    currentPhone = phone;
+    saveUserData(currentUser, currentPhone);
+    userTitle.textContent = "👤 المستخدم: " + currentUser + " | 📱 " + currentPhone;
+    userTitle.style.display = 'block';
+    userModal.style.display = 'none';
+    loadUserState();
+  }
 }
 function checkUser(){
-  if(!currentUser){
+  const userObj = getSavedUser();
+  if(!userObj){
     showUserModal(true);
   }else{
-    userTitle.textContent = "👤 المستخدم: " + currentUser;
+    currentUser = userObj.name;
+    currentPhone = userObj.phone;
+    userTitle.textContent = "👤 المستخدم: " + currentUser + " | 📱 " + currentPhone;
     userTitle.style.display = 'block';
   }
 }
@@ -414,12 +472,15 @@ saveUserModalBtn.onclick = saveUserName;
 cancelUserModalBtn.onclick = ()=>{ userModal.style.display='none'; };
 changeUserBtn.onclick = ()=> showUserModal(false);
 userInput.addEventListener('keydown',e=>{ if(e.key==='Enter') saveUserName(); });
+phoneInput.addEventListener('keydown',e=>{ if(e.key==='Enter') saveUserName(); });
 
 checkUser();
 
-/* ------------- حالة الموقع (لكل مستخدم) ------------- */
+/* ------------- حالة الموقع (لكل مستخدم+هاتف) ------------- */
 const grid = document.getElementById('grid');
-function STORAGE_KEY(){ return 'LINK_GUIDE_USERDATA_' + (currentUser||'GENERAL'); }
+function STORAGE_KEY(){
+  return getUserStorageKey(currentUser||'', currentPhone||'');
+}
 let state = loadState();
 let editingKey = null;
 
@@ -429,7 +490,14 @@ function loadUserState(){
 }
 
 function saveState(){ localStorage.setItem(STORAGE_KEY(), JSON.stringify(state)); }
-function loadState(){ try{ return JSON.parse(localStorage.getItem(STORAGE_KEY())) || getDefaultLinks(); }catch(e){ return getDefaultLinks(); } }
+function loadState(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY());
+    return raw ? JSON.parse(raw) : getDefaultLinks();
+  }catch(e){
+    return getDefaultLinks();
+  }
+}
 function getDefaultLinks(){
   return [
     { key:'youtube', label:'YouTube', url:'https://youtube.com', faceType:'icon', icon:'▶️' },
@@ -493,7 +561,7 @@ function render(){
     // Drag & drop handlers (reorder)
     tile.addEventListener('dragstart',(e)=>{ e.dataTransfer.setData('text/plain', item.key); tile.style.opacity='0.5'; });
     tile.addEventListener('dragend',()=>{ tile.style.opacity='1'; });
-    tile.addEventListener('dragover',(e)=>{ e.preventDefault(); tile.style.outline='3px dashed var(--accent-2)'; });
+    tile.addEventListener('dragover',(e)=>{ e.preventDefault(); tile.style.outline='3px dashed rgba(255,255,255,0.04)'; });
     tile.addEventListener('dragleave',()=>{ tile.style.outline='none'; });
     tile.addEventListener('drop',(e)=>{ e.preventDefault(); tile.style.outline='none'; const fromKey = e.dataTransfer.getData('text/plain'); if(!fromKey) return; if(fromKey===item.key) return; const fromIdx = state.findIndex(s=>s.key===fromKey); const toIdx = state.findIndex(s=>s.key===item.key); const [m] = state.splice(fromIdx,1); state.splice(toIdx,0,m); saveState(); render(); });
 
